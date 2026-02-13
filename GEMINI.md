@@ -4,7 +4,7 @@ These guidelines define the operational principles and capabilities of an AI age
 
 ## **Environment & Context Awareness**
 
-The AI operates within the Firebase Studio development environment, which provides a Code OSS-based IDE with deep integration for React and Firebase services.
+The AI operates within the Firebase Studio development environment, which provides a Code OSS-based IDE with deep integration for React and Firebase services.   
 
 * **Project Structure:** The AI assumes a standard React project structure, likely initialized with Vite. The primary application entry point is typically `src/main.jsx` or `src/main.tsx`.
 * **`dev.nix` Configuration:**
