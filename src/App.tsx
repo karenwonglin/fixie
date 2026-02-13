@@ -1,35 +1,45 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import Dashboard from './pages/Dashboard';
+import PurchaseRequisitions from './pages/PurchaseRequisitions';
+import PurchaseOrders from './pages/PurchaseOrders';
+import Suppliers from './pages/Suppliers';
+import Login from './pages/Login';
+import AddRequisition from './pages/AddRequisition'; 
+import ViewRequisition from './pages/ViewRequisition';
+import EditRequisition from './pages/EditRequisition';
+import AddSupplier from './pages/AddSupplier';
+import './App.css';
 
-function App() {
-  const [count, setCount] = useState(0)
+const AppContent: React.FC = () => {
+  const location = useLocation();
+  const noSidebarRoutes = ['/login'];
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <div className="app-container">
+      {!noSidebarRoutes.includes(location.pathname) && <Navbar />}
+      <main className="main-content">
+        <Routes>
+          <Route path="/" element={<Dashboard />} />
+          <Route path="/purchase-requisitions" element={<PurchaseRequisitions />} />
+          <Route path="/purchase-orders" element={<PurchaseOrders />} />
+          <Route path="/suppliers" element={<Suppliers />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/add-requisition" element={<AddRequisition />} />
+          <Route path="/view-requisition/:id" element={<ViewRequisition />} />
+          <Route path="/edit-requisition/:id" element={<EditRequisition />} />
+          <Route path="/add-supplier" element={<AddSupplier />} />
+        </Routes>
+      </main>
+    </div>
+  );
+};
 
-export default App
+const AppWrapper: React.FC = () => (
+  <Router>
+    <AppContent />
+  </Router>
+);
+
+export default AppWrapper;

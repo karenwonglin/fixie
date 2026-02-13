@@ -1,0 +1,91 @@
+.purchase-requisitions-container {
+  padding: 2rem;
+  background-color: #e0f2f1;
+}
+
+.title {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #004d40;
+}
+
+.actions {
+  margin-bottom: 1.5rem;
+}
+
+.add-requisition-btn {
+  background-color: #00796b;
+  color: #fff;
+  padding: 0.8rem 1.2rem;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-requisition-btn:hover {
+  background-color: #004d40;
+}
+
+.requisitions-list {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.requisitions-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.requisitions-table th,
+.requisitions-table td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #b2dfdb;
+}
+
+.requisitions-table th {
+  font-weight: bold;
+  color: #00796b;
+}
+
+.action-btn {
+  padding: 0.5rem 0.8rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 0.5rem;
+  transition: background-color 0.3s ease;
+}
+
+.view-btn {
+  background-color: #00796b;
+  color: #fff;
+}
+
+.edit-btn {
+  background-color: #ffc107;
+  color: #fff;
+}
+
+.status {
+  padding: 0.4rem 0.8rem;
+  border-radius: 5px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.status.pending-approval {
+  background-color: #ffc107;
+}
+
+.status.approved {
+  background-color: #28a745;
+}
+
+.status.rejected {
+  background-color: #dc3545;
+}
